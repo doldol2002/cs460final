@@ -15,7 +15,7 @@
 > Required. Write this before writing any code. Describe your plan: what you will
 > implement first, what parts you expect to be difficult, and how you plan to test.
 
-_Your entry here._
+_my first priority is to implement dijkstras algorithm to precompute fuel costs betw/ the entrance, exit and relic chambers. i expect recursive search with pruning in explore() to be challenging and will test my logic with the concrete illustration to ensure to find minimum fuel cost of 4._
 
 ---
 
