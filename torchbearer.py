@@ -2,8 +2,8 @@
 CS 460 – Algorithms: Final Programming Assignment
 The Torchbearer
 
-Student Name: ___________________________
-Student ID:   ___________________________
+Student Name: __________Jeremiah Cho_________________
+Student ID:   ____________824840491_______________
 
 INSTRUCTIONS
 ------------
@@ -26,15 +26,14 @@ import heapq
 
 def explain_problem():
     """
-    Returns
+    Returns a string analysis of problem strucutre. 
     -------
-    str
-        Your Part 1 README answers, written as a string.
-        Must match what you wrote in README Part 1.
-
-    TODO
     """
-    return "TODO"
+
+    return (
+        "single dijkstra from S only finds distance to ind nodes and doesnt account for seq needed to visit all relics. after precomputing inter location costs, engine must determine optimal order of relic visits to minimize total cost. therefore, this probme requires a search over all possible orders to find minimum total fuel cost to visit all relicx and reach exit."
+    )
+    
 
 
 # =============================================================================

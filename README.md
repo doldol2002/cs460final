@@ -1,7 +1,7 @@
 # The Torchbearer
 
-**Student Name:** ___________________________
-**Student ID:** ___________________________
+**Student Name:** ______________JEremiah Cho_____________
+**Student ID:** __________824840491_________________
 **Course:** CS 460 – Algorithms | Spring 2026
 
 > This README is your project documentation. Write it the way a developer would document
@@ -13,17 +13,14 @@
 
 ## Part 1: Problem Analysis
 
-> Document why this problem is not just a shortest-path problem. Three bullet points, one
-> per question. Each bullet should be 1-2 sentences max.
-
 - **Why a single shortest-path run from S is not enough:**
-  _Your answer here._
+  _a single dijkstra run from entrnace provides only shortest distance to each relicc but cannot determine most efficient sequence to visit multiple required locations in one trip._
 
 - **What decision remains after all inter-location costs are known:**
-  _Your answer here._
+  _once point to point costs are precomputed, engine must decide optimal order to visit all relic chambers (M) before heading to exit (T)._
 
 - **Why this requires a search over orders (one sentence):**
-  _Your answer here._
+  _because the total fuel cost depends on sequence of stops, the problem needs to explore different ways of relic visits to find global minimum._
 
 ---
 
