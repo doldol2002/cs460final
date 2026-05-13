@@ -1,7 +1,7 @@
 # Development Log – The Torchbearer
 
-**Student Name:** ___________________________
-**Student ID:** ___________________________
+**Student Name:** _____________Jeremiah Cho______________
+**Student ID:** __________824840491_________________
 
 > Instructions: Write at least four dated entries. Required entry types are marked below.
 > Two to five sentences per entry is sufficient. Write entries as you go, not all in one
@@ -10,10 +10,7 @@
 
 ---
 
-## Entry 1 – [Date]: Initial Plan
-
-> Required. Write this before writing any code. Describe your plan: what you will
-> implement first, what parts you expect to be difficult, and how you plan to test.
+## Entry 1 – [5-13-26]: Initial Plan
 
 _my first priority is to implement dijkstras algorithm to precompute fuel costs betw/ the entrance, exit and relic chambers. i expect recursive search with pruning in explore() to be challenging and will test my logic with the concrete illustration to ensure to find minimum fuel cost of 4._
 
