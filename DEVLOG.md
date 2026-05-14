@@ -3,11 +3,6 @@
 **Student Name:** _____________Jeremiah Cho______________
 **Student ID:** __________824840491_________________
 
-> Instructions: Write at least four dated entries. Required entry types are marked below.
-> Two to five sentences per entry is sufficient. Write entries as you go, not all in one
-> sitting. Graders check that entries reflect genuine work across multiple sessions.
-> Delete all blockquotes before submitting.
-
 ---
 
 ## Entry 1 – [5-13-26]: Initial Plan
@@ -28,27 +23,21 @@ _while pushing my precomputation code for part 2, my terminal threw a fatal fail
 
 ---
 
-## Entry 4 – [Date]: Post-Implementation Reflection
+## Entry 4 – [5-14-26]: Post-Implementation Reflection
 
-> Required. Written after your implementation is complete. Describe what you would
-> change or improve given more time.
-
-_Your entry here._
-
+_torchbearer engine completed. with more time,I would upgrade the recursive serach to use memorization. right now the worst case search space is O(k!). By caching the min fuel costs of prev explored subsets of relics, the engine could look up those values instead of recalculating them. this would speed up search in dungeons w/ a high number of relics._
 ---
 
-## Final Entry – [Date]: Time Estimate
-
-> Required. Estimate minutes spent per part. Honesty is expected; accuracy is not graded.
+## Final Entry – [5-14-26]: Time Estimate
 
 | Part | Estimated Hours |
 |---|---|
-| Part 1: Problem Analysis | |
-| Part 2: Precomputation Design | |
-| Part 3: Algorithm Correctness | |
-| Part 4: Search Design | |
-| Part 5: State and Search Space | |
-| Part 6: Pruning | |
-| Part 7: Implementation | |
-| README and DEVLOG writing | |
-| **Total** | |
+| Part 1: Problem Analysis | 0.5 |
+| Part 2: Precomputation Design | 2.5 |
+| Part 3: Algorithm Correctness | 0.5 |
+| Part 4: Search Design | 0.5 |
+| Part 5: State and Search Space | 1 |
+| Part 6: Pruning | 1|
+| Part 7: Implementation | 2.5|
+| README and DEVLOG writing | 1|
+| **Total** | 9.5|
