@@ -98,33 +98,26 @@ _this matters bc/ if precomputed point to point distances are inc, subsequent se
 
 ### Part 5a: State Representation
 
-> Document the three components of your search state as a table.
-> Variable names here must match exactly what you use in torchbearer.py.
-
 | Component | Variable name in code | Data type | Description |
 |---|---|---|---|
-| Current location | | | |
-| Relics already collected | | | |
-| Fuel cost so far | | | |
+| Current location | current_loc|string | room is torchbearer is currently standing in |
+| Relics already collected | relics_remaining | set| the unvisited relics that still need to be colelcted |
+| Fuel cost so far |cost_so_far |float |total accumulated fuel cost of path taken up to this point |
 
 ### Part 5b: Data Structure for Visited Relics
 
-> Fill in the table.
-
 | Property | Your answer |
 |---|---|
-| Data structure chosen | |
-| Operation: check if relic already collected | Time complexity: |
-| Operation: mark a relic as collected | Time complexity: |
-| Operation: unmark a relic (backtrack) | Time complexity: |
-| Why this structure fits | |
+| Data structure chosen | python set (for relics_remaining)|
+| Operation: check if relic already collected | Time complexity: O(1)|
+| Operation: mark a relic as collected | Time complexity: O(1)|
+| Operation: unmark a relic (backtrack) | Time complexity: O(1)|
+| Why this structure fits | sets use hashtables for instant membership testing which make sit efficient to check what relics are left to visit or remove them from remaining  pool wo/ iterating over a list|
 
 ### Part 5c: Worst-Case Search Space
 
-> Two bullets.
-
-- **Worst-case number of orders considered:** _Your answer (in terms of k)._
-- **Why:** _One-line justification._
+- **Worst-case number of orders considered:** _O(k!)_
+- **Why:** _if every relic is conncted to every relic, the engine must evaluate every possible way of the k relic chamber_
 
 ---
 
@@ -132,30 +125,22 @@ _this matters bc/ if precomputed point to point distances are inc, subsequent se
 
 ### Part 6a: Best-So-Far Tracking
 
-> Three bullets.
-
-- **What is tracked:** _Your answer here._
-- **When it is used:** _Your answer here._
-- **What it allows the algorithm to skip:** _Your answer here._
+- **What is tracked:** _lowest total fuel cost across completed valid routes to exit_
+- **When it is used:** _it is checked every recursive step before exploring deeper into dungeon_
+- **What it allows the algorithm to skip:** _immediately leaves partial routes that have already built up more  fuel cost than best known successful route_
 
 ### Part 6b: Lower Bound Estimation
 
-> Three bullets.
-
-- **What information is available at the current state:** _Your answer here._
-- **What the lower bound accounts for:** _Your answer here._
-- **Why it never overestimates:** _Your answer here._
+- **What information is available at the current state:** _the cost so far and precomputer short dditances to remaining relics_
+- **What the lower bound accounts for:** _it calculates cost so far plus the abs minimum cost to reach nearest unvisited relic_
+- **Why it never overestimates:** _bc/ it uses short path dijkstra distances, it is impossible for torchbearer to reach next required stop using less fuel than this estimate_
 
 ### Part 6c: Pruning Correctness
 
-> One to two bullets. Explain why pruning is safe.
-
-- _Your answer here._
+- _pruning is safe bc/ if the minimum possible lwoer boundof partial route is already greater or equal than to best found solution, no future choices_
 
 ---
 
 ## References
 
-> Bullet list. If none beyond lecture notes, write that.
-
-- _Your references here._
+- _lecture notes + youtube_
