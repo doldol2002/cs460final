@@ -114,15 +114,11 @@ def dijkstra_invariant_check():
 
 def explain_search():
     """
-    Returns
-    -------
-    str
-        Your Part 4 README answers, written as a string.
-        Must match what you wrote in README Part 4.
-
-    TODO
+    returns part 4 README answers as a string
     """
-    return "TODO"
+    return (
+        "greedy fails bc/ choosing the immediate cheapest step can force the torchbearer into an expensive path later. for example, starting with a cost 1 step to r1 mgiht require a cost 100 step to reach r2, whereas starting w/ a cost 2 step to r2 might allow a cost 1 step to r1 saving 98 fuel. therefore, the algo must explore diff ways to  evaluate the total cost of every valid order of relic visits "
+    )
 
 
 # =============================================================================

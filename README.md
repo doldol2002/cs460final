@@ -82,20 +82,15 @@ _this matters bc/ if precomputed point to point distances are inc, subsequent se
 
 ### Why Greedy Fails
 
-> State the failure mode. Then give a concrete counter-example using specific node names
-> or costs (you may use the illustration example from the spec). Three to five bullets.
-
-- **The failure mode:** _Your answer here._
-- **Counter-example setup:** _Your answer here._
-- **What greedy picks:** _Your answer here._
-- **What optimal picks:** _Your answer here._
-- **Why greedy loses:** _Your answer here._
+- **The failure mode:** _greedy algo only looks at cheapest immediate next step and ignores how that choice can force the torchbearer into a dead end_
+- **Counter-example setup:** _entrance s, relics r1 r2, exit T. costs S to R1 is 1, S to R23 is 2. r1 to r2 is 100 but r2 to r1 is 1. both relics connect to T for 1._
+- **What greedy picks:** _greedy starts at s and picks r1 bc/ its the cheapest first step bc/ its cost is 1. then forced to go to r2 which is cost 100 and finally to T which is cost 1. total cost is 102._
+- **What optimal picks:** _the optimal route starts at s, goes to r2 which is cost 2 and then r1 which is cost 1 then to T which is cost 1 for total cost 4. _
+- **Why greedy loses:** _by saving a single uniit of fuel on the first step, the greedy aapproach trapped itself into a path that requried a 100 more units of fuel to finish_
 
 ### What the Algorithm Must Explore
 
-> One bullet. Must use the word "order."
-
-- _Your answer here._
+- _to make sure of the minimum total fuel cost, the algo must explroe diff combination to find optimal order of relic visits before heading to exit_
 
 ---
 
