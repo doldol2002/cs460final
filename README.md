@@ -28,33 +28,26 @@
 
 ### Part 2a: Source Selection
 
-> List the source node types as a bullet list. For each, one-line reason.
-
-| Source Node Type | Why it is a source |
-|---|---|
-| _node type_ | _one-line reason_ |
-| _node type_ | _one-line reason_ |
+| _spawn_ | _to find shortest path from starting point to first relic in any possible seq_ |
+| _relics_ | _to find shortest paths betw all relic pairs and from each relic to final exit_ |
 
 ### Part 2b: Distance Storage
 
-> Fill in the table. No prose required.
-
 | Property | Your answer |
 |---|---|
-| Data structure name | |
-| What the keys represent | |
-| What the values represent | |
-| Lookup time complexity | |
-| Why O(1) lookup is possible | |
+| Data structure name | nested dictionary |
+| What the keys represent | outer keys are source nodes; inner keys are detination nodes|
+| What the values represent | minimum fuel cost to travel from source to destnation|
+| Lookup time complexity | O(1)|
+| Why O(1) lookup is possible | python dictionaires use hash tables to provide fast key retrieval|
 
 ### Part 2c: Precomputation Complexity
 
-> State the total complexity and show the arithmetic. Two to three lines max.
-
-- **Number of Dijkstra runs:** _your answer_
-- **Cost per run:** _your answer_
-- **Total complexity:** _your answer_
-- **Justification (one line):** _your answer_
+computation cost based on n nodes, m edges, and k relics
+- **Number of Dijkstra runs:** _k+1 one for entrance, one for each k relic chamber_
+- **Cost per run:** _O(mlogn) using binary heap_
+- **Total complexity:** _O((k+1) x mlogn)_
+- **Justification (one line):** _one standard dijkstra run for every node identified in source selction table_
 
 ---
 

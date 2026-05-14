@@ -42,20 +42,12 @@ def explain_problem():
 
 def select_sources(spawn, relics, exit_node):
     """
-    Parameters
-    ----------
-    spawn : node
-    relics : list[node]
-    exit_node : node
+    returns list of nodes used as sources for dijkstra. no duplicates. order doesnt matter
 
-    Returns
-    -------
-    list[node]
-        No duplicates. Order does not matter.
-
-    TODO
     """
-    pass
+    #combine spawn point and relics into one set to remove any potential dupiicates then return as list and ensure map starting point for every leg of path
+    sources = set([spawn] + relics) 
+    return list(sources)
 
 
 def run_dijkstra(graph, source):
