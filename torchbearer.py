@@ -52,41 +52,45 @@ def select_sources(spawn, relics, exit_node):
 
 def run_dijkstra(graph, source):
     """
-    Parameters
-    ----------
-    graph : dict[node, list[tuple[node, int]]]
-        graph[u] = [(v, cost), ...]. All costs are nonnegative integers.
-    source : node
-
-    Returns
-    -------
-    dict[node, float]
-        Minimum cost from source to every node in graph.
-        Unreachable nodes map to float('inf').
-
-    TODO
+    returns minimum cost from srouce to every node in graph. unreachable nodes map to float
     """
-    pass
+    #initialize distances to infinity for all nodes in graph
+    distances = {node: float('inf') for node in graph}
+    distances[source]=0
+
+    #init pq w/ starting node
+    pq= [(0,source)]
+
+    while pq:
+        curr_cost, curr_node = heapq.heappop(pq)
+
+        #if pull older expensive path off heap, skip it
+        if curr_cost > distances[curr_node]:
+            continue
+
+        #explore neigbor
+        for neighbor, weight in graph[curr_node]:
+            new_cost = curr_cost + weight
+
+            #if found cheaper path to neighbor, update and push to heap
+            if new_cost < distances[neighbor]:
+                distances[neighbor] = new_cost
+                heapq.heappush(pq, (new_cost,neighbor))
+    return distances
+
 
 
 def precompute_distances(graph, spawn, relics, exit_node):
     """
-    Parameters
-    ----------
-    graph : dict[node, list[tuple[node, int]]]
-    spawn : node
-    relics : list[node]
-    exit_node : node
-
-    Returns
-    -------
-    dict[node, dict[node, float]]
-        Nested structure supporting dist_table[u][v] lookups
-        for every source u your design requires.
-
-    TODO
+    returns nested strucutre supporting dist table[u][v] lookups
     """
-    pass
+    dist_table={}
+    sources = select_sources(spawn, relics, exit_node)
+
+    #run sdijkstra fgor every source and store resulting dictionary
+    for source in sources:
+        dist_table[source] = run_dijkstra(graph, source)
+    return dist_table
 
 
 # =============================================================================
