@@ -16,18 +16,15 @@ _my first priority is to implement dijkstras algorithm to precompute fuel costs 
 
 ---
 
-## Entry 2 – [Date]: [Short description]
+## Entry 2 – [5-13-26]: [resolving part 5b state discrepancy]
 
-> Required. At least one entry must describe a bug, wrong assumption, or design change
-> you encountered. Describe what went wrong and how you resolved it.
-
-_Your entry here._
+_Like a classmate, I also noticed an inconsistnecy in the assignment instructions where the README asks to document the data strucutre for visited relics but the explroe function in torchbearer asked for relics remaining. after seeing the clarification in the discord, I decided to design my state around relics remaining. I will use a python set for this bc/ removing an item and chechking if set is empty are both O(1) operations, which is ideal for knowing when to head to exit._
 
 ---
 
-## Entry 3 – [Date]: [Short description]
+## Entry 3 – [5-13-26]: [git network timeout]
 
-_Your entry here._
+_while pushing my precomputation code for part 2, my terminal threw a fatal failed to connect to github.com port 443 error. At first, I thought I messed up my git branch strucutre and later realized my wifi  was givign off fake signal and had to reconfigure. Then i just git push and it synced wo/ force push command._
 
 ---
 
