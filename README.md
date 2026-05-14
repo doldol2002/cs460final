@@ -53,38 +53,28 @@ computation cost based on n nodes, m edges, and k relics
 
 ## Part 3: Algorithm Correctness
 
-> Document your understanding of why Dijkstra produces correct distances.
-> Bullet points and short sentences throughout. No paragraphs.
-
 ### Part 3a: What the Invariant Means
 
-> Two bullets: one for finalized nodes, one for non-finalized nodes.
-> Do not copy the invariant text from the spec.
-
 - **For nodes already finalized (in S):**
-  _Your answer here._
+  _the engine has found the abosllue lowest possible fuel cost from srouce and no cheaper path will be discovered_
 
 - **For nodes not yet finalized (not in S):**
-  _Your answer here._
+  _currently stored cost represents the cheapest route found so far that only uses already finalized nodes as intermediate steps_
 
 ### Part 3b: Why Each Phase Holds
 
-> One to two bullets per phase. Maintenance must mention nonnegative edge weights.
-
 - **Initialization : why the invariant holds before iteration 1:**
-  _Your answer here._
+  _before first iteration, only source node is known, which is 0, and all others are infiniity which satisfies starting conditions_
 
 - **Maintenance : why finalizing the min-dist node is always correct:**
-  _Your answer here._
+  _when minimum cost unvisited node is finalized, distance is guaranteed to be optimal bc/ nonnegative edge weights ensure that any alt path routing through univisited nodes only add more fuel cost, never reduce_
 
 - **Termination : what the invariant guarantees when the algorithm ends:**
-  _Your answer here._
+  _when algo ends. all reachable nodes have been finalized and makes sure that recorded distances represent tru shorterst paths across entire graph_
 
 ### Part 3c: Why This Matters for the Route Planner
 
-> One sentence connecting correct distances to correct routing decisions.
-
-_Your answer here._
+_this matters bc/ if precomputed point to point distances are inc, subsequent search algo will evaluate route permutations using false fuel costs causing the torchbearer to choose a suboptimal path_
 
 ---
 

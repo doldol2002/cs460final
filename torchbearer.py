@@ -99,15 +99,13 @@ def precompute_distances(graph, spawn, relics, exit_node):
 
 def dijkstra_invariant_check():
     """
-    Returns
-    -------
-    str
-        Your Part 3 README answers, written as a string.
-        Must match what you wrote in README Part 3.
-
-    TODO
+    returns part 3 readme anssers as string
     """
-    return "TODO"
+    return (
+        "3a: finalized nodes have their abs min fuel cost locked in. non-finalizzed nodes store cheapest path found so far using finalized nodes."
+        "3b: at init, source is 0 and others are infinity. during mainteneacnce , finalizign the min dist node is correct bc/ nonnegative edge weights make surealt paths through unvisited nodes can only be more expensive.at termination, all reachable nodes have shortest paths determined."
+        "3c: correct precomputed dists are important bc/ if wrong, the serach engine will eval permuations using false cost and select suboptimal route"
+    )
 
 
 # =============================================================================
